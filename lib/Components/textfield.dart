@@ -16,17 +16,15 @@ class textfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: TextField(
-        style: TextStyle(
-          color: constant.textSecondary,
-        ),
+        style: TextStyle(color: constant.textSecondary),
         obscureText: isPassword,
         decoration: InputDecoration(
           hintText: text,
           hintStyle: TextStyle(
             color: constant.textSecondary,
-            fontSize: 30.0,
-            fontWeight: FontWeight.w500,
-            fontStyle: FontStyle.italic,
+            // fontSize: 20.0,
+            // fontWeight: FontWeight.w500,
+            // fontStyle: FontStyle.italic,
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
