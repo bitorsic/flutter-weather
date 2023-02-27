@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'Screens/LoginScreen.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
 }
