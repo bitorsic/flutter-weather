@@ -4,6 +4,7 @@ import '../Components/textfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'mainscreen.dart';
 import '../Constants.dart' as constant;
+import '../Location.dart';
 
 
 
@@ -17,6 +18,20 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   late String email, password;
   int myVar = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    apiCall();
+  }
+
+  void apiCall() async {
+    var location = await determinePosition();
+    myVar = await constant.apiInstance.getLocation(
+        location.latitude.toString(),
+        location.longitude.toString()
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
